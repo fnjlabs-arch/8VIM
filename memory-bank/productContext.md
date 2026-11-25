@@ -1,10 +1,10 @@
-# Product Context: 8VIM
+# Product Context: SadSha 8VIM
 
 ## Why This Project Exists
 
 Mobile text input is frustrating. Standard QWERTY keyboards on touch screens require looking at the screen and are slow and error-prone. The 8pen keyboard introduced a revolutionary gesture-based approach that allowed for blind, fast, and fluid typing — but it was discontinued by its creators.
 
-8VIM was started as a clone of 8pen to keep the concept alive, then expanded with a **Vim philosophy**: the keyboard itself should be the editor, always present whenever you need to input or edit text.
+SadSha 8VIM was started as a clone of 8pen to keep the concept alive, then expanded with a **Vim philosophy**: the keyboard itself should be the editor, always present whenever you need to input or edit text.
 
 ## The Core Problem It Solves
 
@@ -40,7 +40,7 @@ A character is produced by completing a specific movement sequence, e.g.:
 - **Left sector** → Switch to Number Pad
 
 ### Layer System
-8VIM supports **6 visible layers** (FIRST through SIXTH) plus a HIDDEN layer:
+SadSha 8VIM supports **6 visible layers** (FIRST through SIXTH) plus a HIDDEN layer:
 - **Layer 1 (FIRST)**: Default characters (primary alphabet)
 - **Layer 2–6**: Accessed via a specific rotation/sequence prefix
 - Each layer extends the available character set without the user needing separate modes

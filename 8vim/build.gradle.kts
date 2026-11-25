@@ -50,7 +50,7 @@ android {
     val versionRc = (versionProps["RC"] as String).toInt()
     val prNumber = versionProps["PR"] as String?
 
-    namespace = "inc.flide.vim8"
+    namespace = "com.sadsha.vim8"
     compileSdk = 36
 
     compileOptions {
@@ -71,10 +71,10 @@ android {
     }
 
     defaultConfig {
-        applicationId = "inc.flide.vi8"
+        applicationId = "com.sadsha.vim8"
         minSdk = 24
         targetSdk = 35
-        resValue("string", "app_name", "8Vim")
+        resValue("string", "app_name", "SadSha 8VIM")
         if (prNumber != null) {
             versionCode = (System.currentTimeMillis() / 1000).toInt()
             versionName = "pr-$prNumber+${(versionProps["SHA"] as String)}"
@@ -106,11 +106,11 @@ android {
         buildConfig = true
     }
 
-    if (System.getenv("VIM8_BUILD_KEYSTORE_FILE") != null) {
+    if (System.getenv("SADSHA_VIM8_BUILD_KEYSTORE_FILE") != null) {
         signingConfigs {
             create("release") {
-                storeFile = file(System.getenv("VIM8_BUILD_KEYSTORE_FILE"))
-                storePassword = System.getenv("VIM8_BUILD_KEYSTORE_PASSWORD")
+                storeFile = file(System.getenv("SADSHA_VIM8_BUILD_KEYSTORE_FILE"))
+                storePassword = System.getenv("SADSHA_VIM8_BUILD_KEYSTORE_PASSWORD")
                 keyAlias = System.getenv("VIM8_BUILD_KEY_ALIAS")
                 keyPassword = System.getenv("VIM8_BUILD_KEY_PASSWORD")
             }
@@ -122,7 +122,7 @@ android {
             isDebuggable = true
             applicationIdSuffix = if (prNumber != null) ".pr$prNumber" else ".debug"
             val name = if (prNumber != null) "PR $prNumber" else "Debug"
-            resValue("string", "app_name", "8Vim $name")
+            resValue("string", "app_name", "SadSha 8VIM $name")
             enableUnitTestCoverage = true
 //            Activate R8 in debug mode, good to check if any new library added works
 //            isMinifyEnabled = true
@@ -135,7 +135,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            if (System.getenv("VIM8_BUILD_KEYSTORE_FILE") != null) {
+            if (System.getenv("SADSHA_VIM8_BUILD_KEYSTORE_FILE") != null) {
                 signingConfig = signingConfigs.getByName("release")
             }
         }
@@ -143,7 +143,7 @@ android {
         create("rc") {
             initWith(getByName("release"))
             applicationIdSuffix = ".rc"
-            resValue("string", "app_name", "8Vim RC")
+            resValue("string", "app_name", "SadSha 8VIM RC")
         }
     }
 

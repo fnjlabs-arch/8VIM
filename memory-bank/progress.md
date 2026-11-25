@@ -1,4 +1,4 @@
-# Progress: 8VIM
+# Progress: SadSha 8VIM
 
 ## What Works (Implemented & Functional)
 
@@ -96,7 +96,7 @@
 
 ## Test Coverage Areas
 
-Tests exist in `8vim/src/test/kotlin/inc/flide/vim8/` covering:
+Tests exist in `8vim/src/test/kotlin/com/sadsha/vim8/` covering:
 - `arbitraries/` — Kotest property test arbitraries
 - `datastore/nodel/` — PreferenceModel and PreferenceSerDe specs
 - `geometry/` — Circle geometry spec

@@ -1,5 +1,5 @@
-name: Build 8Vim
-run-name: Build 8VIM ${{inputs.target}}
+name: Build SadSha 8VIM
+run-name: Build SadSha 8VIM ${{inputs.target}}
 
 on:
   workflow_call:
@@ -69,8 +69,8 @@ jobs:
           base64 -d keystore-b64.txt > 8vim/8vim.jks
       - name: Build APK
         env:
-          VIM8_BUILD_KEYSTORE_FILE: ./8vim.jks
-          VIM8_BUILD_KEYSTORE_PASSWORD: ${{ secrets.VIM8_BUILD_KEYSTORE_PASSWORD }}
+          SADSHA_VIM8_BUILD_KEYSTORE_FILE: ./8vim.jks
+          SADSHA_VIM8_BUILD_KEYSTORE_PASSWORD: ${{ secrets.SADSHA_VIM8_BUILD_KEYSTORE_PASSWORD }}
           VIM8_BUILD_KEY_ALIAS: ${{ secrets.VIM8_BUILD_KEY_ALIAS }}
           VIM8_BUILD_KEY_PASSWORD: ${{ secrets.VIM8_BUILD_KEY_PASSWORD }}
         run: ./gradlew ${{steps.gradle.outputs.cmd}}

@@ -19,7 +19,7 @@ jobs:
   bump_version:
     needs: version
     runs-on: ubuntu-latest
-    name: Bump 8VIM version
+    name: Bump SadSha 8VIM version
     outputs:
       version_code: ${{steps.vars.outputs.version_code}}
       version_name: ${{steps.vars.outputs.version_name}}

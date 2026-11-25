@@ -29,25 +29,25 @@ Each element in the `entries` stringSet is `"<abbreviation>|||<expansion>"` wher
 New and modified files for the complete feature implementation.
 
 **New files to create:**
-- `8vim/src/main/kotlin/inc/flide/vim8/ime/text/TextReplacementManager.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/ime/text/TextReplacementManager.kt`  
   Core logic: parse entries, encode entries, add/remove/list entries, find replacement, commit replacement via InputConnection.
-- `8vim/src/main/kotlin/inc/flide/vim8/app/settings/TextReplacementScreen.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/app/settings/TextReplacementScreen.kt`  
   Compose settings screen: enable switch, list of shortcut entries, add/edit dialog, delete per entry.
 - `8vim/src/main/res/drawable/ic_find_replace.xml`  
   Simple vector drawable for the HomeScreen navigation icon (24dp, find-replace style icon).
-- `8vim/src/test/kotlin/inc/flide/vim8/ime/text/TextReplacementManagerSpec.kt`  
+- `8vim/src/test/kotlin/com/sadsha/vim8/ime/text/TextReplacementManagerSpec.kt`  
   Kotest `FunSpec` unit tests covering pure logic: `parseEntries`, `encodeEntry`, `findReplacement`, `addEntry`, `removeEntry`.
 
 **Existing files to modify:**
-- `8vim/src/main/kotlin/inc/flide/vim8/AppPrefs.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/AppPrefs.kt`  
   Add `val textReplacement = TextReplacement()` property and new `inner class TextReplacement` with `enabled` and `entries` preferences.
-- `8vim/src/main/kotlin/inc/flide/vim8/VIM8Application.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/VIM8Application.kt`  
   Add `val textReplacementManager = lazy { TextReplacementManager(this) }` lazy property and `fun Context.textReplacementManager()` extension function.
-- `8vim/src/main/kotlin/inc/flide/vim8/ime/keyboard/text/KeyboardManager.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/ime/keyboard/text/KeyboardManager.kt`  
   Inject `textReplacementManager` via context extension, add trigger check at end of `handleText()`.
-- `8vim/src/main/kotlin/inc/flide/vim8/app/Routes.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/app/Routes.kt`  
   Add `const val TEXT_REPLACEMENT = "settings/text-replacement"` route constant and `composable` registration.
-- `8vim/src/main/kotlin/inc/flide/vim8/app/settings/HomeScreen.kt`  
+- `8vim/src/main/kotlin/com/sadsha/vim8/app/settings/HomeScreen.kt`  
   Add `Preference` navigation item for Text Replacement screen, with `ic_find_replace` icon.
 - `8vim/src/main/res/values/strings.xml`  
   Add all string resources for the Text Replacement settings screen.
@@ -79,8 +79,8 @@ New functions and modifications to existing ones.
 New and modified classes with complete descriptions.
 
 **New class: `TextReplacementManager`**
-- File: `8vim/src/main/kotlin/inc/flide/vim8/ime/text/TextReplacementManager.kt`
-- Package: `inc.flide.vim8.ime.text`
+- File: `8vim/src/main/kotlin/com/sadsha/vim8/ime/text/TextReplacementManager.kt`
+- Package: `com.sadsha.vim8.ime.text`
 - Constructor: `(context: Context)` — stores nothing from context; context is used only for `appPreferenceModel()` delegation
 - Key property: `private val prefs by appPreferenceModel()` — follows the same delegation pattern as `KeyboardManager`
 - Companion object: declares `ENTRY_SEPARATOR` and `TRIGGER_CHARS` constants
@@ -88,22 +88,22 @@ New and modified classes with complete descriptions.
 - All pure-logic methods (`parseEntries`, `encodeEntry`, `findReplacement`) are `internal` so they can be directly tested via a test-subject pattern matching `SuggestionsManagerSpec`
 
 **Modified class: `AppPrefs`**
-- File: `8vim/src/main/kotlin/inc/flide/vim8/AppPrefs.kt`
+- File: `8vim/src/main/kotlin/com/sadsha/vim8/AppPrefs.kt`
 - Add `val textReplacement = TextReplacement()` field in the body (alongside `layout`, `keyboard`, etc.)
 - Add `inner class TextReplacement` with `enabled` (`boolean`) and `entries` (`stringSet`) preference fields. No version bump required (new keys default gracefully on first access).
 
 **Modified class: `VIM8Application`**
-- File: `8vim/src/main/kotlin/inc/flide/vim8/VIM8Application.kt`
+- File: `8vim/src/main/kotlin/com/sadsha/vim8/VIM8Application.kt`
 - Add `val textReplacementManager = lazy { TextReplacementManager(this) }` lazy property
 - Add companion extension function `fun Context.textReplacementManager() = this.vim8Application().textReplacementManager` (at bottom of file, alongside `suggestionsManager`, `editorInstance`, etc.)
 
 **Modified class: `KeyboardManager`**
-- File: `8vim/src/main/kotlin/inc/flide/vim8/ime/keyboard/text/KeyboardManager.kt`
+- File: `8vim/src/main/kotlin/com/sadsha/vim8/ime/keyboard/text/KeyboardManager.kt`
 - Add `private val textReplacementManager by context.textReplacementManager()` field (same delegation pattern as `suggestionsManager`)
 - Modify `handleText()` to call `textReplacementManager.checkAndReplace()` when appropriate (see Functions section)
 
 **New composable: `TextReplacementScreen`**
-- File: `8vim/src/main/kotlin/inc/flide/vim8/app/settings/TextReplacementScreen.kt`
+- File: `8vim/src/main/kotlin/com/sadsha/vim8/app/settings/TextReplacementScreen.kt`
 - Pattern: `Screen { title = ...; previewFieldVisible = true; content { ... } }` matching all other settings screens
 - Inside `content {}`: `PreferenceGroup` with `SwitchPreference(prefs.textReplacement.enabled, ...)`, then `PreferenceGroup(title = "Shortcuts")` containing a "Add shortcut" `Preference` item with a trailing `+` icon and per-entry items that are clickable (to edit) and have a trailing delete `IconButton`
 - Dialog state managed with `remember { mutableStateOf(...) }` — a single reusable `AlertDialog` with two `OutlinedTextField` inputs (abbreviation, expansion) used for **both** adding new and editing existing entries
@@ -127,7 +127,7 @@ No changes to `gradle/libs.versions.toml` or `8vim/build.gradle.kts` are require
 Unit tests covering all pure-Kotlin logic in `TextReplacementManager`; Android-dependent methods (`checkAndReplace`) are left for integration testing.
 
 **New test file:**
-`8vim/src/test/kotlin/inc/flide/vim8/ime/text/TextReplacementManagerSpec.kt`
+`8vim/src/test/kotlin/com/sadsha/vim8/ime/text/TextReplacementManagerSpec.kt`
 
 Tests follow the `SuggestionsManagerSpec` pattern: a private `TextReplacementManagerTestSubject` class replicates the internal pure logic to avoid constructing the real class (which needs Android `Context` for `appPreferenceModel()`).
 

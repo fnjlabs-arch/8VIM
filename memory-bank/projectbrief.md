@@ -1,7 +1,7 @@
-# Project Brief: 8VIM
+# Project Brief: SadSha 8VIM
 
 ## Overview
-8VIM is an Android keyboard (Input Method Editor / IME) application inspired by the now-discontinued **8pen** keyboard and the **Vim** text editor. It implements a radial gesture-based input mechanism where the user draws strokes through sectors of a circular layout to produce characters.
+SadSha 8VIM is an Android keyboard (Input Method Editor / IME) application inspired by the now-discontinued **8pen** keyboard and the **Vim** text editor. It implements a radial gesture-based input mechanism where the user draws strokes through sectors of a circular layout to produce characters.
 
 ## Core Mission
 Create an **editor-in-keyboard** for Android that enables:
@@ -18,11 +18,11 @@ Create an **editor-in-keyboard** for Android that enables:
 
 ## Scope
 - **Platform**: Android (minSdk 24, targetSdk 34)
-- **Package ID**: `inc.flide.vi8`
+- **Package ID**: `com.sadsha.vim8`
 - **Current Version**: 0.17.0
 - **Distribution**: F-Droid (primary), Google Play (stable + beta)
 
 ## Project Identity
-- **GitHub**: https://github.com/8VIM/8VIM (origin: git@github.com:flide/8VIM.git)
+- **GitHub**: https://github.com/fnjlabs-arch/8VIM (origin: git@github.com:flide/8VIM.git)
 - **Language**: Kotlin (primary), with some Java
 - **Build System**: Gradle (Kotlin DSL)

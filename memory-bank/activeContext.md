@@ -1,4 +1,4 @@
-# Active Context: 8VIM
+# Active Context: SadSha 8VIM
 
 ## Current State (as of text-replacement session)
 
@@ -84,11 +84,11 @@ The project is at **version 0.17.0**. A full dependency upgrade was completed in
 
 | Purpose | File |
 |---------|------|
-| IME core service | `8vim/src/main/kotlin/inc/flide/vim8/Vim8ImeService.kt` |
-| Application entry | `8vim/src/main/kotlin/inc/flide/vim8/VIM8Application.kt` |
-| All preferences | `8vim/src/main/kotlin/inc/flide/vim8/AppPrefs.kt` |
-| Gesture processing | `8vim/src/main/kotlin/inc/flide/vim8/ime/actionlisteners/MainKeypadActionListener.kt` |
-| Data model (keyboard) | `8vim/src/main/kotlin/inc/flide/vim8/ime/layout/models/KeyboardData.kt` |
+| IME core service | `8vim/src/main/kotlin/com/sadsha/vim8/Vim8ImeService.kt` |
+| Application entry | `8vim/src/main/kotlin/com/sadsha/vim8/VIM8Application.kt` |
+| All preferences | `8vim/src/main/kotlin/com/sadsha/vim8/AppPrefs.kt` |
+| Gesture processing | `8vim/src/main/kotlin/com/sadsha/vim8/ime/actionlisteners/MainKeypadActionListener.kt` |
+| Data model (keyboard) | `8vim/src/main/kotlin/com/sadsha/vim8/ime/layout/models/KeyboardData.kt` |
 | Dependency versions | `gradle/libs.versions.toml` |
 | App build config | `8vim/build.gradle.kts` |
 

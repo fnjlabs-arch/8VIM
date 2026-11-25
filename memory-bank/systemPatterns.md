@@ -1,8 +1,8 @@
-# System Patterns: 8VIM
+# System Patterns: SadSha 8VIM
 
 ## Architecture Overview
 
-8VIM follows a standard Android IME architecture with a clean Kotlin-first codebase. The system is organized into these primary layers:
+SadSha 8VIM follows a standard Android IME architecture with a clean Kotlin-first codebase. The system is organized into these primary layers:
 
 ```
 ┌─────────────────────────────────────────┐

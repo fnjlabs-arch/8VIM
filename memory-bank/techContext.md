@@ -1,4 +1,4 @@
-# Tech Context: 8VIM
+# Tech Context: SadSha 8VIM
 
 ## Platform & Language
 
@@ -8,7 +8,7 @@
 | **Primary Language** | Kotlin 2.2.0 |
 | **JVM Target** | Java 17 |
 | **Build System** | Gradle 9.4.0 (Kotlin DSL, `build.gradle.kts`) |
-| **Package Name** | `inc.flide.vim8` (app ID: `inc.flide.vi8`) |
+| **Package Name** | `com.sadsha.vim8` (app ID: `com.sadsha.vim8`) |
 | **Version** | 0.17.0 (versionCode computed from MAJOR/MINOR/PATCH/RC in `version.properties`) |
 | **Build Variants** | `debug`, `release`, `rc` |
 
@@ -167,8 +167,8 @@ Android Studio may show `Unresolved reference 'material'` at `libs.androidx.comp
 
 ### Signing (Release)
 Controlled via environment variables:
-- `VIM8_BUILD_KEYSTORE_FILE`
-- `VIM8_BUILD_KEYSTORE_PASSWORD`
+- `SADSHA_VIM8_BUILD_KEYSTORE_FILE`
+- `SADSHA_VIM8_BUILD_KEYSTORE_PASSWORD`
 - `VIM8_BUILD_KEY_ALIAS`
 - `VIM8_BUILD_KEY_PASSWORD`
 
@@ -178,7 +178,7 @@ Controlled via environment variables:
 8VIM/
 ├── 8vim/                          # Main app module
 │   ├── src/main/kotlin/           # Kotlin sources
-│   │   └── inc/flide/vim8/
+│   │   └── com/sadsha/vim8/
 │   │       ├── app/               # MainActivity, Routes, Setup, Settings
 │   │       ├── datastore/         # Preference model & Datastore
 │   │       ├── geometry/          # Circle, Dimension utilities

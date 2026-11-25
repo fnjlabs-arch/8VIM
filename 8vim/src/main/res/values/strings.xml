@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "8Vim">]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "SadSha 8VIM">]>
 <resources>
     <string name="app__version__label">Version</string>
     <string name="enable_ime_dialog_title">Please Enable IME</string>
@@ -37,7 +37,7 @@
     <string name="main_keyboard_button_content_description">Open Main keypad</string>
     <string name="floating_keyboard_button_content_description">Floating</string>
     <string name="generic_back_button_content_description">Go Back</string>
-    <string name="settings__about__owner__label">Designed and Developed by flide</string>
+    <string name="settings__about__owner__label">Designed and Developed by SadSha</string>
     <string name="connect_with_us_label">Connect with us</string>
     <string name="github_icon_content_description">Github Icon</string>
     <string name="settings__about__github__label">Fork us on GitHub</string>
@@ -47,9 +47,9 @@
     <string name="settings__about__play_store__label">Rate us on the Play Store</string>
     <string name="twitter_icon_content_description">"Twitter icon"</string>
     <string name="settings__about__twitter__label">Follow us on Twitter</string>
-    <string name="choose_the_8vim">Choose 8Vim above.We will NEVER collect any personal data.</string>
+    <string name="choose_the_8vim">Choose SadSha 8VIM above.We will NEVER collect any personal data.</string>
 
-    <string name="vim8__repository_url" translatable="false">https://github.com/8VIM/8VIM</string>
+    <string name="vim8__repository_url" translatable="false">https://github.com/fnjlabs-arch/8VIM</string>
     <string name="general__no_browser_app_found_for_url">No browser app found for handling URL {url}</string>
     <!-- Setup UI strings -->
     <string name="setup__title" comment="Title of Setup">Welcome!</string>

@@ -1,6 +1,6 @@
 name: Release
 run-name: |
-  Releasing 8VIM with next version: ${{inputs.version}}
+  Releasing SadSha 8VIM with next version: ${{inputs.version}}
 concurrency: release
 on:
   workflow_dispatch:

@@ -7,4 +7,4 @@
 - fix: Swipe-out gestures involuntarily applied on swipe-out termination in #471
 - feat: Floating keyboard option (usefull for tablet/foldable phones) in #490
 
-**Full Changes**: [here](https://github.com/8VIM/8VIM/releases/tag/v0.17.0)
+**Full Changes**: [here](https://github.com/fnjlabs-arch/8VIM/releases/tag/v0.17.0)

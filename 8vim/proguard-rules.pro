@@ -10,7 +10,7 @@
 -keep,allowobfuscation,allowshrinking class arrow.core.Either
 -keep,allowobfuscation,allowshrinking class arrow.core.Option
 
--keep class inc.flide.vim8.ime.layout.** { *; }
+-keep class com.sadsha.vim8.ime.layout.** { *; }
 
 -keep class ch.qos.logback.** { *; }
 -keepclassmembers class ch.qos.logback.classic.pattern.* { <init>(); }
@@ -20,7 +20,7 @@
 -keep class kotlin.Metadata { *; }
 -keep class kotlin.reflect.** { *; }
 
--keep class inc.flide.vim8.R
--keep class inc.flide.vim8.R$* {
+-keep class com.sadsha.vim8.R
+-keep class com.sadsha.vim8.R$* {
     <fields>;
 }
